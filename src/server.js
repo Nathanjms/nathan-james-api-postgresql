@@ -1,5 +1,5 @@
 import express from "express";
-import pool from "../config";
+import { pool } from "../config";
 import cors from "cors";
 
 const app = express();

@@ -4,6 +4,9 @@
   "private": true,
   "description": "Books API",
   "main": "server.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node server.js",
     "start:dev": "nodemon server.js",

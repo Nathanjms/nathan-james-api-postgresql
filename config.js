@@ -1,4 +1,4 @@
-import { Pool } from "pg";
+const { Pool } = require("pg");
 
 require("dotenv").config();
 
@@ -11,4 +11,4 @@ const pool = new Pool({
   ssl: isProduction ? { rejectUnauthorized: false } : false,
 });
 
-export default pool;
+module.exports = { pool };

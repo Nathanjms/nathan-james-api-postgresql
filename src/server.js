@@ -1,11 +1,10 @@
 import express from "express";
 import pool from "../config";
-const cors = require("cors");
+import cors from "cors";
 
 const app = express();
-
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
 const getMovies = (request, response) => {
   pool.query("SELECT * FROM movies", (error, results) => {

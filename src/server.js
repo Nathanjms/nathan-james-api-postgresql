@@ -4,7 +4,7 @@ import cors from "cors";
 import { index } from "./get/index";
 import { getMovies } from "./get/movies";
 import { getUserInfo } from "./post/users";
-import { addMovie } from "./post/movies";
+import { addMovie, markSeen } from "./post/movies";
 
 const app = express();
 app.use(cors());
@@ -24,7 +24,7 @@ app.route("/api/(:groupId)/movies").get(getMovies);
 
 app.route("/api/user-info").post(getUserInfo);
 app.route("/api/movies/add").post(addMovie);
-app.route("/api/(:groupId)/movies/mark-seen").post(addMovie);
+app.route("/api/movies/seen").post(markSeen);
 
 // Start server
 app.listen(process.env.PORT || 3002, () => {

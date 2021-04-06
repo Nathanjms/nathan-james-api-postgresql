@@ -10,15 +10,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const getIMDBMovies = (request, response) => {
-  pool.query("SELECT * FROM imdb_movies", (error, results) => {
-    if (error) {
-      throw error;
-    }
-    response.status(200).json(results.rows);
-  });
-};
-
 app.route("/").get(index);
 app.route("/api/(:groupId)/movies").get(getMovies);
 

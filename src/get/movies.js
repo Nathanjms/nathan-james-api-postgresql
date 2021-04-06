@@ -17,4 +17,13 @@ const getMovies = (req, res) => {
   );
 };
 
+const getIMDBMovies = (request, response) => {
+  pool.query("SELECT * FROM imdb_movies", (error, results) => {
+    if (error) {
+      throw error;
+    }
+    response.status(200).json(results.rows);
+  });
+};
+
 export { getMovies };

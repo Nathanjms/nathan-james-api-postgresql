@@ -12,10 +12,6 @@ const getMovies = (req, res) => {
       if (error) {
         res.status(404).json(error);
       }
-      if (results.rowCount == 0) {
-        res.status(500).json("No group found with that ID");
-        return;
-      }
       res.status(200).json(results.rows);
     }
   );

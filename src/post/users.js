@@ -19,6 +19,7 @@ const getUserInfo = async (req, res) => {
         return;
       }
       res.status(200).json(result.rows[0]);
+      return;
     })
     .catch((err) => {
       throw err;

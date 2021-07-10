@@ -8,10 +8,11 @@ const getUserInfo = async (req, res) => {
   var firebaseId = req.body.firebaseId;
   return await pool
     .query(
-      "SELECT mg.id as group_id, mg.name as group_name, u.name as user_name FROM movie_groups mg LEFT JOIN movie_group_members mgm on mgm.group_id = mg.id LEFT JOIN users u on mgm.user_id = u.id WHERE u.firebase_id = " +
-        "'" +
-        firebaseId +
-        "';"
+      `SELECT mg.id as group_id, mg.name as group_name, u.name as user_name
+      FROM movie_groups mg 
+      LEFT JOIN movie_group_members mgm on mgm.group_id = mg.id 
+      LEFT JOIN users u on mgm.user_id = u.id 
+      WHERE u.firebase_id = '${firebaseId}';`
     )
     .then((result) => {
       if (result.rowCount == 0) {

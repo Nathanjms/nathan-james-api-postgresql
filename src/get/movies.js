@@ -7,7 +7,7 @@ const getMovies = (req, res) => {
   }
   var groupId = req.params.groupId;
   pool.query(
-    "SELECT * FROM movies WHERE group_id = " + groupId,
+    `SELECT * FROM movies WHERE group_id = ${groupId}`,
     (error, results) => {
       if (error) {
         res.status(404).json(error);

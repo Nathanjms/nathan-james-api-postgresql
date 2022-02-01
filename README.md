@@ -1,4 +1,6 @@
-## Backend to my [website](https://nathanjms.co.uk). 
+_This is now in Read only mode as the backend of https://movies.nathanjms.co.uk is using [my Laravel API](https://github.com/Nathanjms/nathanjms-api). I have also realised that this codebase is potentially open to SQL Injection, so should not be used without updating the queries to be [Parameterized Queries](https://node-postgres.com/features/queries#parameterized-query)._
+
+## Backend to my [website](https://movies.nathanjms.co.uk). 
 
 ### Features include:
 
